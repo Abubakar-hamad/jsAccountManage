@@ -1,3 +1,5 @@
+let report = localStorage.getItem("report") ? JSON.parse(localStorage.getItem("report")) : []
+
 let electric = document.getElementById("electric"); 
 let comunication = document.getElementById("comunication"); 
 let university = document.getElementById("university"); 
@@ -85,7 +87,7 @@ function confirmPayment(e) {
     let id = localStorage.getItem("id") ? JSON.parse(localStorage.getItem("id")) : [];
     let user = usersInfo.find(item => item.id == id)
     let mount = parseInt(localStorage.getItem("Mount") ? JSON.parse(localStorage.getItem("Mount")) : []);
-
+    let balancebefor = user.balance
     if (mount > user.balance) {
         setTimeout(() => {
             alert("رصيد العميل اقل من قيمة الشراء")
@@ -97,7 +99,26 @@ function confirmPayment(e) {
         console.log(updateMount);
         user.balance = updateMount;
         console.log(user.balance, user);
-    
+        var currentdate = new Date(); 
+        var datetime = currentdate.getDate() + "/"
+                + (currentdate.getMonth()+1)  + "/" 
+                + currentdate.getFullYear() + " -- "  
+                + currentdate.getHours() + ":"  
+                + currentdate.getMinutes() + ":" 
+                + currentdate.getSeconds();
+        let repo = {
+            id: user.id,
+            uName: user.uName,
+            process: "فاتورة كهرباء ",
+            mount: mount,
+            balance: balancebefor,
+            balanceAfterProccess: updateMount,
+            time:datetime
+        };
+        let finalRebort = [ ...report , repo]
+        localStorage.setItem("report", JSON.stringify(finalRebort));
+
+
         localStorage.setItem("coustomerInformations", JSON.stringify(usersInfo));
 
 

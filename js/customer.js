@@ -1,4 +1,4 @@
-let coustomersInfo = JSON.parse(localStorage.getItem('coustomerInformations')) || localStorage.setItem('coustomerInformations' ,JSON.stringify(UserDB));
+let coustomersInfo = JSON.parse(localStorage.getItem('coustomerInformations')) || localStorage.setItem('coustomerInformations' ,JSON.stringify(Proccess));
 const CustomerDom = document.querySelector(".customer");
 
 

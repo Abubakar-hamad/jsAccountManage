@@ -5,3 +5,4 @@ let UserDB = [
     {id:4 , uName:'محمد عثمان' , nationalID:'132-065456546' , address:'كسلا',tele:925050251 ,balance:2000 , mountUpdate:''},
     {id:5 , uName:' محمد كمال الدين' , nationalID:'132-87964665' , address:'الفاشر',tele:123761789 ,balance:64000 , mountUpdate:''},
 ]
+

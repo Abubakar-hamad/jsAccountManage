@@ -95,7 +95,7 @@ li:hover .dropdown{
 
 .customerPage{
     position: relative;
-    margin-top: 100px;
+    margin-top: 50px;
 
 }
 
@@ -289,4 +289,59 @@ span.delete{
     font-size: 25px;
     cursor: pointer;
     
+}
+
+.search{
+    display: flex;
+    width: 50%;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    
+}
+
+.search input[type=number]{
+   height: 50px;
+    width: 50%;
+    outline: none;
+    background-color: #c3c3c3;
+    border: solid 1px gray;
+}
+.search input[type=submit]{
+    width: 20%;
+    cursor: pointer;
+    line-height: 30px;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    color: #eee;
+    background-color: #856262;
+    
+}
+
+
+.noProccess{
+    display: none;
+}
+
+.confirmId{
+    display: none;
+}
+
+.noProccess span>:nth-of-type(2){
+    float: left;
+   
+}
+
+.print{
+    background-color: #856262;
+    float: left;
+    font-family: 'Cairo' , sans-serif; 
+    border-radius: 5px;
+    color: #eee;
+    padding: 5px;
+    cursor: pointer;
+    display: none;
+
 }

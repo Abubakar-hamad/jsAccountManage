@@ -1,3 +1,4 @@
+let report = localStorage.getItem("report") ? JSON.parse(localStorage.getItem("report")) : []
 
 // تعريف المتغيرات في صفحة ال HTML
 
@@ -83,13 +84,32 @@ function ConfirmIncrease(e) {
     e.preventDefault()
     
     let id = localStorage.getItem("id") ? JSON.parse(localStorage.getItem("id")) : [];
-    let user = registerId
+    let user = usersInfo.find(item => item.id == id)
     let mount = parseInt(localStorage.getItem("Mount") ? JSON.parse(localStorage.getItem("Mount")) : []);
+    let balancebefor = user.balance
     let updateMount = user.balance + mount
     console.log(mount); 
     console.log(updateMount);
     user.balance = updateMount; 
     console.log(user.balance, user);
+    var currentdate = new Date(); 
+    var datetime = currentdate.getDate() + "/"
+                + (currentdate.getMonth()+1)  + "/" 
+                + currentdate.getFullYear() + '--'
+                + currentdate.getHours() + ":"  
+                + currentdate.getMinutes() + ":" 
+                + currentdate.getSeconds();
+    let repo = {
+        id: user.id,
+        uName: user.uName,
+        process: "ايداع نقدي",
+        mount: mount,
+        balance: balancebefor,
+        balanceAfterProccess: updateMount,
+        time:datetime
+    };
+    let finalRebort = [ ...report , repo]
+    localStorage.setItem("report", JSON.stringify(finalRebort));
     
     localStorage.setItem("coustomerInformations", JSON.stringify(usersInfo));
 

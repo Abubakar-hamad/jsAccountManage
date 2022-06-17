@@ -1,6 +1,6 @@
 
 // تعريف المتغيرات في صفحة ال HTML
-
+let report = localStorage.getItem("report") ? JSON.parse(localStorage.getItem("report")) : [];
 let selectId = document.querySelector('.idAccount');
 let customerName = document.querySelector('.uname');
 let customerBalance = document.querySelector('.balance');
@@ -8,9 +8,7 @@ let increseMount = document.querySelector('.mount');
 let afterIncreseMount = document.querySelector('.nowBalance');
 let increaseBtn = document.querySelector(".confirmIncrease");
 let usersInfo = localStorage.getItem('coustomerInformations') ? JSON.parse(localStorage.getItem("coustomerInformations")) : [];
-let creditUpdate= document.querySelector(".credit")
-
-
+let creditUpdate = document.querySelector(".credit")
 
 
 
@@ -22,11 +20,9 @@ function SelectAcount() {
         <option  hidden value="0">رقم الحساب</option>
         <option value=${item.id}>${item.id} || ${item.uName}</option>`
     })
-    selectId.innerHTML = userSelected;
-    
-
-   
+    selectId.innerHTML = userSelected;   
 }
+
 
 SelectAcount(usersInfo);
 
@@ -85,7 +81,7 @@ function ConfirmIncrease(e) {
     let id = localStorage.getItem("id") ? JSON.parse(localStorage.getItem("id")) : [];
     let user = usersInfo.find(item => item.id == id)
     let mount = parseInt(localStorage.getItem("Mount") ? JSON.parse(localStorage.getItem("Mount")) : []);
-    
+    let balancebefor = user.balance
     if (mount > user.balance) {
         setTimeout(() => {
             creditUpdate.style.display = "block"; 
@@ -99,19 +95,37 @@ function ConfirmIncrease(e) {
         },4000)
     }
     else{
-    let updateMount = user.balance - mount
-    console.log(mount); 
-    console.log(updateMount);
-    user.balance = updateMount; 
-    console.log(user.balance, user);
+        let updateMount = user.balance - mount
+        console.log(mount); 
+        console.log(updateMount);
+        user.balance = updateMount; 
+        console.log(user.balance, user);
+        var currentdate = new Date(); 
+        var datetime = currentdate.getDate() + "/"
+                + (currentdate.getMonth()+1)  + "/" 
+                + currentdate.getFullYear() + " -- "  
+                + currentdate.getHours() + ":"  
+                + currentdate.getMinutes() + ":" 
+                + currentdate.getSeconds();
+        let repo = {
+            id: user.id,
+            uName: user.uName,
+            process: "سحب نقدي",
+            mount: mount,
+            balance: balancebefor,
+            balanceAfterProccess: updateMount,
+            time:datetime
+        };
+        let finalRebort = [ ...report , repo]
+        localStorage.setItem("report", JSON.stringify(finalRebort));
     
     localStorage.setItem("coustomerInformations", JSON.stringify(usersInfo));
-
+    
     customerName.value = ""
     customerBalance.value = ""
     increseMount.value = ""
     increaseBtn.style.display = "none"
-    
+     
     setTimeout(() => {
         afterIncreseMount.value = user.balance
         creditUpdate.style.display = "block"; 
