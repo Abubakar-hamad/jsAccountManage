@@ -16,7 +16,7 @@ print.addEventListener("click", () => {
     setTimeout(() => {
 
         window.print();  
-        window.location = '/report.html'
+        window.location = '../mybank/report.html'
         
     } , 1500)
     

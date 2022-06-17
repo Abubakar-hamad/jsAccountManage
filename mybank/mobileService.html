@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="./style/css/style.css">
-    <title> خدمة جامعية</title>
+    <link rel="stylesheet" href="../style/css/style.css">
+    <title>فاتورة اتصال</title>
 </head>
 <body>
     <header>
@@ -16,21 +16,21 @@
 
         <div class="navbar">
                 <ul>
-                    <li><a href="/index.html">الرئيسية</a></li>
-                    <li><a href="/deposit.html">ايداع</a>
-                    <li><a href="/withdrawal.html">سحب</a></li>
+                    <li><a href="/">الرئيسية</a></li>
+                    <li><a href="./deposit.html">ايداع</a>
+                    <li><a href="./withdrawal.html">سحب</a></li>
                     <li> <p>طلب خدمة</p>
                         <div class="dropdown">
-                            <a href="electricServices.html">شراء كهرباء </a>
+                            <a href="./electricServices.html">شراء كهرباء </a>
                             <hr>
-                            <a href="mobileService.html">شراء رصيد </a>
+                            <a href="./mobileService.html">شراء رصيد </a>
                             <hr>
-                            <a href="eduServices.html">دفع رسوم  دراسة</a>
-
+                            <a href="./eduServices.html">دفع رسوم  دراسة</a>
+    
                         </div>
-                        <li><a href="addcustomer.html">اضافة عميل</a></li>
-                    <li><a href="/customer.html">بيانات العملاء</a></li>
-                    <li><a href="/report.html">تقرير</a></li>
+                        <li><a href="./addcustomer.html">اضافة عميل</a></li>
+                    <li><a href="./customer.html">بيانات العملاء</a></li>
+                    <li><a href="./report.html">تقرير</a></li>
                 </ul>
         </div>
 
@@ -48,7 +48,7 @@
             <div class="askService">
             
                 <div  class="electricPayment serv ">
-                    <h1 style="color: #B00020;" >دفع رسوم جامعة</h1>
+                    <h1 style="color: #B00020;" >دفع فاتورة جوال</h1>
                     <br>
                     <form action="">
                         <select class="account" type="number">
@@ -61,15 +61,15 @@
                         
 
                         <select class="uni" type="number">
-                            <option  hidden value="0">الجامعة</option>
-                            <option  value="الخرطوم">الخرطوم</option>
-                            <option  value="السودان">السودان</option>
-                            <option  value="النيلين">النيلين</option>
-                            <option  value="عطبرة">عطبرة</option>
+                            <option  hidden value="0">نوع المشغل</option>
+                            <option  value="MTN">MTN</option>
+                            <option  value="ZAIN">ZAIN</option>
+                            <option  value="SUDANI">SUDANI</option>
+       
     
                         </select>
-                        <input class="eleNumber" type="number"  min="" placeholder=" ادخل الرقم الجامعي" oninput="validity.valid||(value='');">
-                        <input class="price" type="number"  min="0" placeholder="ادخل المبلغ ... أدنى قيمة يمكن دفعها 1000 جنيه" oninput="validity.valid||(value='');">
+                        <input class="eleNumber" type="number"  min="" placeholder=" ادخل رقم الشريحة " oninput="validity.valid||(value='');">
+                        <input class="price" type="number"  min="0" placeholder="ادخل المبلغ... أدنى مبلغ 10 جنيه" oninput="validity.valid||(value='');">
                         <span >سيتم خصم 50 جنيه رسوم للمعاملة من حساب العميل  </span>
                          <h3  class="credit" ></h3>
                         <input class="confirmBtn" style=" cursor: pointer; width: 30%;margin:0 35%  ;background-color: #382a2a67;border: none;border-radius: 10px; margin-top:30px  ;" type="submit" value="تأكيـــد">
@@ -81,8 +81,8 @@
     </section>
 
 
-    <script src="./js/userDB.js"></script>
-    <script src="./js/customer.js"></script>
-    <script src="./js/eduServices.js"></script>
+    <script src="../js/userDB.js"></script>
+    <script src="../js/customer.js"></script>
+    <script src="../js/mobileService.js"></script>
 </body>
 </html>

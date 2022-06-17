@@ -126,7 +126,7 @@ function ConfirmIncrease(e) {
     }, 1500)
 
     setTimeout(() => {
-        window.location ="/deposit.html"
+        window.location ="../mybank/deposit.html"
     },5000)
    
 

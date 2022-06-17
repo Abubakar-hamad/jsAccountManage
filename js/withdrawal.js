@@ -81,6 +81,7 @@ function ConfirmIncrease(e) {
     let id = localStorage.getItem("id") ? JSON.parse(localStorage.getItem("id")) : [];
     let user = usersInfo.find(item => item.id == id)
     let mount = parseInt(localStorage.getItem("Mount") ? JSON.parse(localStorage.getItem("Mount")) : []);
+    console.log(mount);
     let balancebefor = user.balance
     if (mount > user.balance) {
         setTimeout(() => {
@@ -91,7 +92,7 @@ function ConfirmIncrease(e) {
         
         setTimeout(() => {
             alert(`رصيد العميل الحالي:${user.balance} جنيه المبلغ المراد سحبه:${mount} جنيه`)
-            window.location="/withdrawal.html"
+            window.location="../mybank/withdrawal.html"
         },4000)
     }
     else{
@@ -134,7 +135,7 @@ function ConfirmIncrease(e) {
     }, 1500)
 
     setTimeout(() => {
-        window.location ="/withdrawal.html"
+        window.location ="../mybank/withdrawal.html"
     },5000)
    
     }

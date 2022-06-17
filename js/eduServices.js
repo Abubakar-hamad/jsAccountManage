@@ -136,7 +136,7 @@ function confirmPayment(e) {
 
     setTimeout(() => {
         alert(`تم دفع  رسوم لصالح جامعة' ${serv}'`)
-       window.location= 'eduServices.html'
+       window.location= '../mybank/eduServices.html'
     },5000)
    
 }

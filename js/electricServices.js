@@ -135,7 +135,7 @@ function confirmPayment(e) {
 
         setTimeout(() => {
             alert("تم شراء الكهرباء وارسالها لرقم جوال العميل")
-            window.location = 'electricServices.html'
+            window.location = '../mybank/electricServices.html'
         }, 5000)
    
     }

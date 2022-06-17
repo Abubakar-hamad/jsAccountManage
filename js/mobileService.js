@@ -137,7 +137,7 @@ function confirmPayment(e) {
 
     setTimeout(() => {
         alert(`تم دفع  فاتورة  ' ${serv}'`)
-       window.location= 'mobileService.html'
+       window.location= '../mybank/mobileService.html'
     },5000)
    
 }

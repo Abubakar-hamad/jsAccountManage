@@ -79,7 +79,7 @@ function addNewCustomer(e) {
         
             setTimeout(() => {
                 alert(`تمت اضافة حساب جديد باسم "${name}" , برقم الحساب:"${id}"`)
-                window.location = 'customer.html'
+                window.location = '../mybank/customer.html'
             },5000)
         }
 
