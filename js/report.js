@@ -7,6 +7,15 @@ let empty = document.querySelector(".noProccess")
 let print = document.querySelector(".print")
 let nav = document.querySelector("header")
 
+
+if(localStorage.getItem('username') == 0){
+    setTimeout(()=>{
+        alert("يجب علي تسجيل الدخول أولاً")
+        window.location= "../index.html"
+    }, 1000)
+}
+
+
 print.addEventListener("click", () => {
 
     print.style.display = "none"

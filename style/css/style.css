@@ -345,3 +345,16 @@ span.delete{
     display: none;
 
 }
+
+#userLogged{
+display: none;
+}
+#userUnlogged{
+    cursor: pointer;
+}
+
+#signOut{
+cursor: pointer;
+color: red;
+
+}

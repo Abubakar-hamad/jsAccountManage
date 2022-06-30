@@ -11,10 +11,15 @@ let increaseBtn = document.querySelector(".confirmIncrease");
 let usersInfo = localStorage.getItem('coustomerInformations') ? JSON.parse(localStorage.getItem("coustomerInformations")) : [];
 let creditUpdate= document.querySelector(".credit")
 
-let alert = document.getElementById("alert")
 
 
 
+if(localStorage.getItem('username') == 0){
+    setTimeout(()=>{
+        alert("يجب علي تسجيل الدخول أولاً")
+        window.location= "../index.html"
+    }, 1000)
+}
 
 // تعريف دوال الازرار وجلب البيانات
 function SelectAcount() {

@@ -9,6 +9,13 @@ let success = document.querySelector(".credit");
 
 
 
+if(localStorage.getItem('username') == 0){
+    setTimeout(()=>{
+        alert("يجب علي تسجيل الدخول أولاً")
+        window.location= "../index.html"
+    }, 1000)
+}
+
 AccountID.addEventListener("keyup", (e) => {
     let registerid = e.target.value; 
     localStorage.setItem("registerId" , JSON.stringify(registerid))

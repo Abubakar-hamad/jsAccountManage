@@ -1,6 +1,14 @@
-let coustomersInfo = JSON.parse(localStorage.getItem('coustomerInformations')) || localStorage.setItem('coustomerInformations' ,JSON.stringify(Proccess));
+let coustomersInfo = JSON.parse(localStorage.getItem('coustomerInformations')) || localStorage.setItem('coustomerInformations' ,JSON.stringify(UserDB));
 const CustomerDom = document.querySelector(".customer");
 
+
+
+if(localStorage.getItem('username') == 0){
+    setTimeout(()=>{
+        alert("يجب علي تسجيل الدخول أولاً")
+        window.location= "../index.html"
+    }, 1000)
+}
 
 
 function DrowCustomerUI (coustomersInfo = [] ){

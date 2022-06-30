@@ -20,6 +20,12 @@ let confirmBtn = document.querySelector(".confirmBtn");
 
 
 
+if(localStorage.getItem('username') == 0){
+    setTimeout(()=>{
+        alert("يجب علي تسجيل الدخول أولاً")
+        window.location= "../index.html"
+    }, 1000)
+}
 
 
 function SelectAcount() {

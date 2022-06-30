@@ -15,6 +15,14 @@ let confirmBtn = document.querySelector(".confirmBtn");
 let university = document.querySelector(".uni")
 
 
+
+if(localStorage.getItem('username') == 0){
+    setTimeout(()=>{
+        alert("يجب علي تسجيل الدخول أولاً")
+        window.location= "../index.html"
+    }, 1000)
+}
+
 university.addEventListener("click", (e) => {
     let serv = e.target.value;
     localStorage.setItem("serv" , JSON.stringify(serv))

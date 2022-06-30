@@ -11,6 +11,12 @@ let usersInfo = localStorage.getItem('coustomerInformations') ? JSON.parse(local
 let creditUpdate = document.querySelector(".credit")
 
 
+if(localStorage.getItem('username') == 0){
+    setTimeout(()=>{
+        alert("يجب علي تسجيل الدخول أولاً")
+        window.location= "../index.html"
+    }, 1000)
+}
 
 
 // تعريف دوال الازرار وجلب البيانات
