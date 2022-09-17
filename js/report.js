@@ -1,5 +1,3 @@
-let user = localStorage.getItem("report") ? JSON.parse(localStorage.getItem("report")) : []
-console.log(user);
 let input = document.querySelector(".findId"); 
 let confirmBtn = document.querySelector(".confirmId")
 let rebortDom = document.querySelector(".report");
@@ -8,7 +6,9 @@ let print = document.querySelector(".print")
 let nav = document.querySelector("header")
 
 
-if(localStorage.getItem('username') == 0){
+user =  JSON.parse(localStorage.getItem('user'))
+
+if(!user){
     setTimeout(()=>{
         alert("يجب علي تسجيل الدخول أولاً")
         window.location= "../index.html"

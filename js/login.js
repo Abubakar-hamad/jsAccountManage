@@ -1,8 +1,8 @@
 // <<<<<<<<<<<<<<<<<< variable >>>>>>>>>>>>>>>>>>>>>>>//
 
 let btnLogin = document.querySelector(".login-form")
-let loginUserInput= document.getElementById("loginUsername")
-let loginPassInput= document.getElementById("loginPassword")
+let loginUserInput = document.getElementById("loginUsername")
+let loginPassInput = document.getElementById("loginPassword")
 
 
 
@@ -16,18 +16,22 @@ btnLogin.addEventListener("submit", loginUser)
 
 function loginUser(e) {
     e.preventDefault();
-    
     if (loginUserInput.value === "" || loginPassInput.value === "") {
         alert("بعض الحقول فارغة !! ")
     } else {
-        if (loginUserInput.value !== localStorage.getItem("username") || loginPassInput.value !== localStorage.getItem("password")) {
-            alert("اسم الموظف أو كلمة المرور خاطئة !!")
-        } else {
+        users = JSON.parse(localStorage.getItem("users")) ?? [];
+        user = users.find((item) => {
+            return item.username == loginUserInput.value && item.password == loginPassInput.value;
+        })
+        if (user) {
+            localStorage.setItem("user", JSON.stringify(user))
             setTimeout(() => {
                 window.location = "../index.html"
-            },1000)
+            }, 1000)
+        } else {
+            alert("اسم الموظف أو كلمة المرور خاطئة !!")
         }
     }
-    
-   
+
+
 }
