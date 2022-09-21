@@ -6,35 +6,33 @@ let out = document.getElementById("signOut") ;
 
 let empty = 0
 
-employee = localStorage.getItem('username') || localStorage.setItem("username" , JSON.stringify(empty))
+emp =  JSON.parse(localStorage.getItem('user'))
 
 
 
 
-if (employee != empty) {
+if (emp) {
         
         unlogged.remove() ;
         logged.style.display = 'block';
-        user.innerHTML = localStorage.getItem("username")
+        user.innerHTML = emp.username
         
     }
 
 
     unlogged.addEventListener("click" , ()=>{
         setTimeout(()=>{
-            window.location='../mybank/login.html'
+            window.location='mybank/login.html'
         },1000)
     })
 
 out.addEventListener("click" ,  ()=>{
     setTimeout(()=>{
-        localStorage.removeItem("username")
-        localStorage.removeItem("password")
-        localStorage.removeItem("email")
+        localStorage.removeItem("user")
         user.style.display="none";
         unlogged.style.display="block"
         setTimeout(()=>{
-            window.location = "../index.html"
+            window.location.reload()
         })
     },1000)
 
