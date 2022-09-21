@@ -6,16 +6,16 @@ let out = document.getElementById("signOut") ;
 
 let empty = 0
 
-user =  JSON.parse(localStorage.getItem('user'))
+emp =  JSON.parse(localStorage.getItem('user'))
 
 
 
 
-if (user) {
+if (emp) {
         
         unlogged.remove() ;
         logged.style.display = 'block';
-        user.innerHTML = localStorage.getItem("username")
+        user.innerHTML = emp.username
         
     }
 
@@ -32,7 +32,7 @@ out.addEventListener("click" ,  ()=>{
         user.style.display="none";
         unlogged.style.display="block"
         setTimeout(()=>{
-            window.location = "./index.html"
+            window.location.reload()
         })
     },1000)
 

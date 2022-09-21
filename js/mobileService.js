@@ -16,9 +16,11 @@ let confirmBtn = document.querySelector(".confirmBtn");
 let university = document.querySelector(".uni")
 
 
-if(localStorage.getItem('username') == 0){
+user =  JSON.parse(localStorage.getItem('user'))
+
+if(!user){
     setTimeout(()=>{
-        alert("يجب علي تسجيل الدخول أولاً")
+        alert("يجب عليك تسجيل الدخول أولاً")
         window.location= "../index.html"
     }, 1000)
 }

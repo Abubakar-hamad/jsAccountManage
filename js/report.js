@@ -10,7 +10,7 @@ user =  JSON.parse(localStorage.getItem('user'))
 
 if(!user){
     setTimeout(()=>{
-        alert("يجب علي تسجيل الدخول أولاً")
+        alert("يجب عليك تسجيل الدخول أولاً")
         window.location= "../index.html"
     }, 1000)
 }
